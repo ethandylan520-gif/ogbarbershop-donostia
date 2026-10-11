@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OG Barbershop — Barbería en Donostia / San Sebastián</title>
+<meta name="description" content="OG Barbershop, barbería en Gros (Donostia / San Sebastián). Cortes OG' Basic, Prime, Essential y Elite. 4,9 en Booksy con 301 reseñas. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #0b0b0b;
+    --negro-2: #141414;
+    --negro-3: #1c1c1c;
+    --blanco: #f5f5f2;
+    --hueso: #ecebe6;
+    --rojo: #d7263d;
+    --gris: #9a9a96;
+    --linea: rgba(255,255,255,.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--negro); color: var(--blanco); line-height: 1.65; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  header {
+    position: fixed; inset: 0 0 auto 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 6%; background: rgba(11,11,11,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--linea);
+  }
+  .marca { display: flex; align-items: center; gap: 12px; }
+  .marca img { height: 44px; width: auto; }
+  .marca span { font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: 3px; }
+  nav ul { list-style: none; display: flex; gap: 30px; align-items: center; }
+  nav a { font-size: .74rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gris); transition: color .2s; }
+  nav a:hover { color: var(--blanco); }
+  nav .nav-cta { color: var(--blanco); background: var(--rojo); padding: 9px 18px; font-weight: 700; }
+  nav .nav-cta:hover { color: var(--blanco); background: #b81d31; }
+
+  .hero { display: grid; grid-template-columns: 1fr 1.05fr; min-height: 100vh; padding-top: 65px; position: relative; overflow: hidden; }
+  .hero-txt { display: flex; flex-direction: column; justify-content: center; padding: 60px 6% 60px 12%; position: relative; z-index: 1; }
+  .hero small { display: inline-flex; align-items: center; gap: 12px; font-size: .74rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gris); margin-bottom: 18px; }
+  .hero small::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--rojo); }
+  .hero h1 { font-size: clamp(4rem, 10vw, 8.5rem); line-height: .82; margin-bottom: 22px; }
+  .hero h1 span { display: block; color: transparent; -webkit-text-stroke: 2px var(--blanco); }
+  .hero p { color: #cfcfcb; font-size: 1.05rem; max-width: 440px; margin-bottom: 32px; font-weight: 300; }
+  .botones { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--rojo); color: var(--blanco); padding: 15px 30px; font-weight: 700; font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; transition: transform .2s, background .2s; }
+  .btn:hover { transform: translateY(-2px); background: #b81d31; }
+  .btn-linea { background: transparent; border: 1px solid rgba(255,255,255,.45); }
+  .btn-linea:hover { background: rgba(255,255,255,.08); }
+  .btn-blanco { background: var(--blanco); color: var(--negro); }
+  .btn-blanco:hover { background: #ddd; }
+  .hero-foto { position: relative; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); }
+  .hero-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--negro), transparent 35%); }
+  .hero-foto .sello { position: absolute; left: 30px; bottom: 30px; background: var(--blanco); color: var(--negro); padding: 16px 20px; z-index: 2; text-align: center; }
+  .sello b { display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 2.6rem; line-height: 1; }
+  .sello span { font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  .franja { background: var(--blanco); color: var(--negro); display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 44px; padding: 16px 20px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 2px; text-transform: uppercase; }
+  .franja span::before { content: "⛩"; margin-right: 12px; font-size: .9rem; }
+
+  section { padding: 100px 6%; max-width: 1180px; margin: 0 auto; }
+  .titulillo { display: block; text-align: center; font-size: .72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--rojo); margin-bottom: 8px; font-weight: 700; }
+  .titulo { text-align: center; font-size: clamp(2.8rem, 6.5vw, 4.6rem); margin-bottom: 16px; line-height: .95; }
+  .intro { text-align: center; max-width: 540px; margin: 0 auto 50px; color: #bdbdb8; font-weight: 300; }
+
+  .planes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+  .plan { background: var(--negro-3); border: 1px solid var(--linea); padding: 30px 24px; display: flex; flex-direction: column; position: relative; }
+  .plan h3 { font-size: 1.9rem; line-height: 1; }
+  .plan h3 small { display: block; font-family: 'Inter', sans-serif; font-size: .7rem; font-weight: 600; letter-spacing: 1.5px; color: var(--gris); margin-top: 6px; }
+  .plan .precio { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 3.4rem; line-height: 1; margin: 18px 0 6px; }
+  .plan .tiempo { font-size: .8rem; color: var(--gris); margin-bottom: 16px; }
+  .plan ul { list-style: none; margin-bottom: 24px; flex: 1; }
+  .plan li { font-size: .88rem; padding: 6px 0 6px 20px; position: relative; color: #d6d6d2; border-bottom: 1px solid var(--linea); }
+  .plan li::before { content: "—"; position: absolute; left: 0; color: var(--rojo); }
+  .plan .btn { justify-content: center; padding: 12px 18px; }
+  .plan.top { background: var(--blanco); color: var(--negro); border-color: var(--blanco); transform: translateY(-12px); }
+  .plan.top h3 small, .plan.top .tiempo { color: #6a6a66; }
+  .plan.top li { color: #2a2a28; border-color: rgba(0,0,0,.1); }
+  .plan .etiqueta { position: absolute; top: -12px; left: 24px; background: var(--rojo); color: var(--blanco); font-size: .66rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; }
+  .extras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .extra { border: 1px solid var(--linea); padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .extra b { font-family: 'Big Shoulders Display', sans-serif; font-size: 1.4rem; }
+  .extra small { display: block; color: var(--gris); font-size: .78rem; }
+  .extra .p { white-space: nowrap; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 1.8rem; }
+
+  .fondo-2 { background: var(--negro-2); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+  .local { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 12px; grid-auto-flow: dense; }
+  .local img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .4s; }
+  .local img:hover { filter: grayscale(0); }
+  .local .alto { grid-row: span 2; }
+  .local .ancho { grid-column: span 2; }
+
+  .equipo { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+  .equipo .circulo { width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.15); }
+  .equipo .circulo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); }
+  .equipo h2 { font-size: clamp(2.6rem, 5.4vw, 3.8rem); line-height: .95; margin-bottom: 18px; }
+  .equipo p { color: #cfcfcb; font-weight: 300; margin-bottom: 14px; }
+  .nombres { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .nombres span { border: 1px solid rgba(255,255,255,.35); padding: 8px 18px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+
+  .opiniones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .op { background: var(--negro-3); border-left: 3px solid var(--rojo); padding: 28px 28px 24px; }
+  .op .est { letter-spacing: 3px; margin-bottom: 10px; }
+  .op p { font-size: 1.06rem; font-weight: 300; margin-bottom: 14px; }
+  .op cite { font-style: normal; color: var(--gris); font-size: .8rem; letter-spacing: 1px; }
+
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .horario { width: 100%; border-collapse: collapse; }
+  .horario td { padding: 12px 4px; border-bottom: 1px solid var(--linea); }
+  .horario td:last-child { text-align: right; color: #cfcfcb; }
+  .horario tr.cerrado td:last-child { color: var(--gris); }
+  .dir { margin-top: 20px; color: #cfcfcb; }
+  .dir b { color: var(--blanco); font-weight: 600; }
+  .comod { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .comod span { border: 1px solid var(--linea); padding: 5px 12px; font-size: .76rem; color: #cfcfcb; }
+  .mapa { border: 1px solid var(--linea); }
+  .mapa img { width: 100%; filter: grayscale(1) contrast(1.05); }
+
+  .cta { text-align: center; padding: 110px 6%; background: var(--blanco); color: var(--negro); position: relative; overflow: hidden; }
+  .cta::before { content: "OG"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30rem; line-height: 1; color: rgba(0,0,0,.04); }
+  .cta h2 { font-size: clamp(3rem, 7vw, 5rem); line-height: .95; margin-bottom: 14px; position: relative; }
+  .cta p { color: #4b4b48; max-width: 460px; margin: 0 auto 30px; position: relative; }
+  .cta .botones { justify-content: center; position: relative; }
+  .cta .btn-linea { color: var(--negro); border-color: var(--negro); }
+  .cta .btn-linea:hover { background: rgba(0,0,0,.05); }
+
+  footer { text-align: center; padding: 26px 6%; color: #6d6d69; font-size: .8rem; }
+
+  .wa-flotante { position: fixed; right: 22px; bottom: 22px; z-index: 120; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 25px rgba(0,0,0,.35); }
+  .wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
+
+  @media (max-width: 960px) {
+    nav ul li:not(:last-child) { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-txt { padding: 56px 6% 48px; }
+    .hero-foto { height: 360px; }
+    .hero-foto::after { background: linear-gradient(180deg, var(--negro), transparent 30%); }
+    .planes { grid-template-columns: 1fr 1fr; }
+    .plan.top { transform: none; }
+    .extras { grid-template-columns: 1fr; }
+    .local { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+    .equipo, .opiniones, .info { grid-template-columns: 1fr; }
+    .equipo { gap: 36px; }
+    section { padding: 76px 6%; }
+  }
+  @media (max-width: 560px) {
+    .planes { grid-template-columns: 1fr; }
+    .plan.top { margin-top: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="marca" href="#inicio"><img src="img/logo.jpg" alt="OG"><span>BARBERSHOP</span></a>
+  <nav>
+    <ul>
+      <li><a href="#cortes">Cortes</a></li>
+      <li><a href="#local">El local</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a class="nav-cta" href="https://wa.me/34671314955" target="_blank" rel="noopener">Pedir cita</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <div class="hero-txt">
+    <small>Barbería · Gros, Donostia</small>
+    <h1>OG<span>Barber</span>shop</h1>
+    <p>Fades trabajados, texturas y barba con acabado a cuchilla en pleno Gros. Elige tu nivel y sal mejor que el promedio.</p>
+    <div class="botones">
+      <a class="btn" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn btn-linea" href="#cortes">Ver cortes</a>
+    </div>
+  </div>
+  <div class="hero-foto">
+    <img src="img/local.jpg" alt="Interior de OG Barbershop en Donostia">
+    <div class="sello"><b>4,9</b><span>301 reseñas</span></div>
+  </div>
+</div>
+
+<div class="franja"><span>4,9 en Booksy</span><span>301 reseñas</span><span>Iparragirre, 18</span><span>Plaza de aparcamiento</span></div>
+
+<section id="cortes">
+  <span class="titulillo">Elige tu nivel</span>
+  <h2 class="titulo">Los cortes OG</h2>
+  <p class="intro">Cuatro niveles para que sepas exactamente lo que te llevas. ¿Dudas? Escríbenos y te aconsejamos.</p>
+  <div class="planes">
+    <div class="plan">
+      <h3>OG' Basic<small>Rápido y preciso</small></h3>
+      <div class="precio">20 €</div>
+      <div class="tiempo">30 min</div>
+      <ul><li>Corte clásico o fade limpio</li><li>Servicio rápido, sin extras</li></ul>
+      <a class="btn btn-linea" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar</a>
+    </div>
+    <div class="plan top">
+      <span class="etiqueta">El más pedido</span>
+      <h3>OG' Prime<small>Nuestro corte estrella</small></h3>
+      <div class="precio">25 €</div>
+      <div class="tiempo">45 min</div>
+      <ul><li>Fade trabajado y texturizado</li><li>Acabado detallado</li><li>Asesoría según tu cara y cabello</li><li>Incluye cejas</li></ul>
+      <a class="btn" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar</a>
+    </div>
+    <div class="plan">
+      <h3>OG' Essential<small>Pelo y barba</small></h3>
+      <div class="precio">30 €</div>
+      <div class="tiempo">1 h</div>
+      <ul><li>Corte Basic</li><li>Barba y cejas</li><li>Delineado a cuchilla y gel</li></ul>
+      <a class="btn btn-linea" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar</a>
+    </div>
+    <div class="plan">
+      <h3>OG' Elite<small>Experiencia completa</small></h3>
+      <div class="precio">40 €+</div>
+      <div class="tiempo">1 h 15 min</div>
+      <ul><li>Corte premium</li><li>Barba o diseño</li><li>Máximo detalle y atención personalizada</li></ul>
+      <a class="btn btn-linea" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar</a>
+    </div>
+  </div>
+  <div class="extras">
+    <div class="extra"><div><b>OG' Young</b><small>Corte actual para los más jóvenes · 30 min</small></div><span class="p">17 €</span></div>
+    <div class="extra"><div><b>OG' Buzz Cut</b><small>Rapado y lavado · 30 min</small></div><span class="p">15 €</span></div>
+    <div class="extra"><div><b>OG' Senior</b><small>15 min</small></div><span class="p">15 €</span></div>
+  </div>
+</section>
+
+<div class="fondo-2">
+<section id="local">
+  <span class="titulillo">El local</span>
+  <h2 class="titulo" style="margin-bottom:50px;">Así se trabaja en OG</h2>
+  <div class="local">
+    <img class="alto" src="img/trabajando.jpg" alt="Barbero trabajando en OG Barbershop">
+    <img class="ancho" src="img/local-2.jpg" alt="Puestos de trabajo con luces de anillo">
+    <img src="img/cliente-sofa.jpg" alt="Cliente en el sofá de la barbería">
+    <img src="img/equipo.jpg" alt="Barberos atendiendo a clientes">
+    <img src="img/corte-nino.jpg" alt="Corte a un cliente joven">
+    <img src="img/cliente.jpg" alt="Barbero con un cliente">
+  </div>
+</section>
+</div>
+
+<section id="equipo">
+  <div class="equipo">
+    <div class="circulo"><img src="img/logo-redondo.jpg" alt="Logotipo de OG Barbershop"></div>
+    <div>
+      <span class="titulillo" style="text-align:left;">El equipo</span>
+      <h2>Para los que quieren nivel, no prisa</h2>
+      <p>En OG cuidamos cada corte al detalle: te escuchamos, miramos tu tipo de cara y de pelo, y trabajamos el fade hasta que queda perfecto.</p>
+      <p>Buen ambiente y un trato cercano. Por eso nuestros clientes repiten.</p>
+      <div class="nombres"><span>Juanda</span><span>Molina</span><span>Brayan</span><span>Chego</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="fondo-2">
+<section id="opiniones">
+  <span class="titulillo">Opiniones</span>
+  <h2 class="titulo" style="margin-bottom:50px;">301 reseñas en Booksy</h2>
+  <div class="opiniones">
+    <div class="op"><div class="est">★★★★★</div><p>“La mejor barbería de San Sebastián. Muy buen trato y muy profesional, cada vez que voy salgo muy satisfecho. Muy recomendable.”</p><cite>— Izan, cliente verificado en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Juanra ha sabido hacerse a mi pelo y a mis exigencias. Se ha marcado un corte increíble. ¡Volveré seguro!”</p><cite>— Alatz, cliente verificado en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Personal muy amable, siempre dispuestos a darte los mejores servicios posibles.”</p><cite>— Luken, cliente verificado en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Muy buenos servicio y cortes, como siempre. ¡Recomiendo mucho ir!”</p><cite>— Umed, cliente verificado en Booksy</cite></div>
+  </div>
+</section>
+</div>
+
+<section id="ubicacion">
+  <span class="titulillo">Visítanos</span>
+  <h2 class="titulo" style="margin-bottom:50px;">Horario y ubicación</h2>
+  <div class="info">
+    <div>
+      <table class="horario">
+        <tr><td>Lunes</td><td>10:00 – 14:00 · 16:00 – 20:00</td></tr>
+        <tr><td>Martes</td><td>10:00 – 14:00 · 16:00 – 20:00</td></tr>
+        <tr><td>Miércoles</td><td>10:00 – 14:00 · 16:00 – 20:00</td></tr>
+        <tr><td>Jueves</td><td>10:00 – 14:00 · 16:00 – 20:00</td></tr>
+        <tr><td>Viernes</td><td>10:00 – 14:00 · 16:00 – 20:00</td></tr>
+        <tr><td>Sábado</td><td>10:00 – 14:00 · 15:30 – 18:00</td></tr>
+        <tr class="cerrado"><td>Domingo</td><td>Cerrado</td></tr>
+      </table>
+      <p class="dir"><b>Iparragirre Kalea, 18 C</b> · 20001 Donostia / San Sebastián</p>
+      <p class="dir">Tel / WhatsApp: <b>671 31 49 55</b></p>
+      <div class="comod"><span>Plaza de aparcamiento</span><span>Pago con tarjeta</span><span>Adaptado para niños</span><span>Wi-Fi</span></div>
+    </div>
+    <div class="mapa"><img src="img/map.png" alt="Mapa de OG Barbershop en Donostia"></div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>¿Listo para tu<br>próximo corte?</h2>
+  <p>Escríbenos por WhatsApp o reserva en Booksy y elige barbero, nivel y hora.</p>
+  <div class="botones">
+    <a class="btn" href="https://wa.me/34671314955" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    <a class="btn btn-linea" href="https://booksy.com/es-es/101001_o-gbarbershop_barberia_72833_donostia-san-sebastian" target="_blank" rel="noopener">Reservar en Booksy</a>
+  </div>
+</div>
+
+<footer>© 2026 OG Barbershop · Iparragirre Kalea, 18, Donostia / San Sebastián</footer>
+
+<a class="wa-flotante" href="https://wa.me/34671314955" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.09c-.24.68-1.43 1.3-1.97 1.35-.5.05-.98.24-3.3-.69-2.79-1.1-4.56-3.95-4.7-4.13-.13-.18-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34h.53c.17 0 .4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.33z"/></svg>
+</a>
+
+</body>
+</html>
